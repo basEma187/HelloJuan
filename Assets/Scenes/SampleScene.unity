@@ -250,8 +250,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186095749}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17517845, y: 0.67953384, z: -0.17219706, w: 0.69129914}
-  m_LocalPosition: {x: -10.050735, y: 3.25, z: -0.05799926}
+  m_LocalRotation: {x: 0.06073661, y: 0.7044935, z: -0.06073662, w: 0.70449346}
+  m_LocalPosition: {x: -9.053222, y: 2.374771, z: 0.045000646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -342,6 +342,46 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &491496222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 491496223}
+  - component: {fileID: 491496226}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &491496223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491496222}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.08589453, y: -0, z: -0.0000000074505797, w: 0.9963042}
+  m_LocalPosition: {x: -8.881784e-16, y: 1.519, z: -0.07626534}
+  m_LocalScale: {x: 0.08095459, y: 0.080954604, z: 0.08095459}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 604361305395449612}
+  m_LocalEulerAnglesHint: {x: 9.855, y: 0, z: 0}
+--- !u!33 &491496226
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491496222}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &614359465
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,8 +944,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235362360}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17517845, y: 0.67953384, z: -0.17219706, w: 0.69129914}
-  m_LocalPosition: {x: -10.050735, y: 3.25, z: -0.05799926}
+  m_LocalRotation: {x: 0.06073661, y: 0.7044935, z: -0.06073662, w: 0.70449346}
+  m_LocalPosition: {x: -9.053222, y: 2.374771, z: 0.045000646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -930,8 +970,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 2943585399247291159}
-  m_Follow: {fileID: 2943585399247291159}
+  m_LookAt: {fileID: 491496223}
+  m_Follow: {fileID: 491496223}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
@@ -1119,8 +1159,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1399748593}
   - component: {fileID: 1399748594}
-  - component: {fileID: 1399748596}
-  - component: {fileID: 1399748595}
+  - component: {fileID: 1399748597}
+  - component: {fileID: 1399748598}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1155,7 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1399748595
+--- !u!114 &1399748597
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1167,11 +1207,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6043bde05a7fc4cba197d06915c1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0.1, y: 0.5, z: 0.3}
-  ShoulderOffset: {x: 0.5, y: 2, z: -3}
-  VerticalArmLength: 1.25
-  CameraSide: 0.603
-  CameraDistance: 3
+  Damping: {x: 0, y: 0, z: 0}
+  ShoulderOffset: {x: 0, y: 0, z: 0}
+  VerticalArmLength: 0
+  CameraSide: 1
+  CameraDistance: 5
   CameraCollisionFilter:
     serializedVersion: 2
     m_Bits: 0
@@ -1179,7 +1219,7 @@ MonoBehaviour:
   CameraRadius: 0.2
   DampingIntoCollision: 0
   DampingFromCollision: 2
---- !u!114 &1399748596
+--- !u!114 &1399748598
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2619,6 +2659,7 @@ Transform:
   - {fileID: 4318247722254542899}
   - {fileID: 1987672594813998010}
   - {fileID: 842162484}
+  - {fileID: 491496223}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &614554796138629360
