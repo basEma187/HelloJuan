@@ -23,6 +23,7 @@ public class Chase : MonoBehaviour
 
         _enemy =  GetComponent<NavMeshAgent>();
         _animator = gameObject.GetComponent<Animator>();
+       
     }
 
     // Update is called once per frame

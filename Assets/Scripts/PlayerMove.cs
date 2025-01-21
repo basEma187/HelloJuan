@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +9,8 @@ public class PlayerMove : MonoBehaviour
     public float rotateSpeed = 3.0F;
     private float _distance;
     private Animator _animator;
+    
+
 
     private void Start()
     {
@@ -27,14 +30,16 @@ public class PlayerMove : MonoBehaviour
         // Move forward / backward
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         float curSpeed = speed * Input.GetAxis("Vertical");
-        
+
         ManageMovementAnimation();
         controller.SimpleMove(forward * curSpeed);
-        
+
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _animator.SetTrigger("Punch");
+
+            StartCoroutine(Pippo());
             if (_distance <= 2.0f && enemy)
             {
                 enemy.GetComponent<LifeManager>().AddLife(-5);
@@ -43,38 +48,47 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    private IEnumerator Pippo()
+    {
+        Debug.Log("prima");
+        
+        yield return new WaitForSeconds(0.25f);
+        
+        Debug.Log("dopo");
+    }
+
     private void ManageMovementAnimation()
     {
         if (Input.GetAxis("Vertical") > 0)
         {
-            _animator.SetBool("RunBack",false);
-            _animator.SetBool("Run",true);
-            
+            _animator.SetBool("RunBack", false);
+            _animator.SetBool("Run", true);
         }
-        else if (Input.GetAxis("Vertical") < 0) 
+        else if (Input.GetAxis("Vertical") < 0)
         {
-            _animator.SetBool("Run",false);
+            _animator.SetBool("Run", false);
             _animator.SetBool("RunBack", true);
         }
         else
         {
-            _animator.SetBool("Run",false);
-            _animator.SetBool("RunBack",false);
+            _animator.SetBool("Run", false);
+            _animator.SetBool("RunBack", false);
         }
 
         if (Input.GetAxis("Horizontal") > 0)
         {
-            _animator.SetBool("LeftRun",false);
-            _animator.SetBool("RightRun",true);
-        }else if (Input.GetAxis("Horizontal") < 0)
+            _animator.SetBool("LeftRun", false);
+            _animator.SetBool("RightRun", true);
+        }
+        else if (Input.GetAxis("Horizontal") < 0)
         {
-            _animator.SetBool("RightRun",false);
-            _animator.SetBool("LeftRun",true);
+            _animator.SetBool("RightRun", false);
+            _animator.SetBool("LeftRun", true);
         }
         else
         {
-            _animator.SetBool("RightRun",false);
-            _animator.SetBool("LeftRun",false);
+            _animator.SetBool("RightRun", false);
+            _animator.SetBool("LeftRun", false);
         }
     }
 }
